@@ -1,0 +1,15 @@
+
+<button onclick="subscribe()">Subscribe</button>
+<button onclick="unsubscribe()">Subscribe</button>
+<script>
+	var ws = new WebSocket("ws://127.0.0.1:8081/ws");
+
+ 
+	function subscribe(){
+		ws.send('{"action":"subscribe", "symbols":["ETHUSD", ".BDEFIMEX"]}');
+	}	
+	
+	function unsubscribe(){
+		ws.send('{"action":"unsubscribe"}');
+	}
+</script>
